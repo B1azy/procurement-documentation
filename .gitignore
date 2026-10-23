@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# Секреты и окружение
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/*
+.idea/
+
+# Локальные кэши Continue (индекс, история чата)
+.continue/
+.continueignore
+.clinerules
+# ОС
+.DS_Store
+Thumbs.db
+
+# Логи
+*.log
