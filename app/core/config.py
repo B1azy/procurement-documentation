@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     llm_provider: str = "ollama"
 
     # Модель по умолчанию
-    llm_model: str = "qwen3.5:4b"
+    llm_model: str = "qwen2.5:7b"
 
     # Разные модели под разные задачи (необязательно)
     llm_model_questions: str | None = None

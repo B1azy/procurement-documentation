@@ -21,6 +21,7 @@ async def register_user(db: AsyncSession, payload: UserCreate) -> User:
 
     user = User(
         email=payload.email,
+        full_name=payload.full_name,
         hashed_password=hash_password(payload.password),
     )
     db.add(user)

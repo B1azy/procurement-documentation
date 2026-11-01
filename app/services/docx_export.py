@@ -48,6 +48,21 @@ def render_specification(spec: TechnicalSpecification, version: int) -> io.Bytes
             assumption["source"], assumption["source"]
         )
 
+    if context["materials"].get("notes"):
+        context["materials"]["notes"] = (
+            context["materials"]["notes"]
+            .replace("(user_defined)", "")
+            .replace("(typical_assumption)", "")
+            .strip()
+        )
+    if context["quality"].get("notes"):
+        context["quality"]["notes"] = (
+            context["quality"]["notes"]
+            .replace("(user_defined)", "")
+            .replace("(typical_assumption)", "")
+            .strip()
+        )
+
     doc = DocxTemplate(str(TEMPLATE_PATH))
     doc.render(context)
 
