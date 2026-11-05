@@ -9,6 +9,7 @@
 
 from app.core.config import settings
 from app.services.llm.base import LLMClient
+from app.services.llm.gigachat_client import GigaChatClient
 from app.services.llm.ollama_client import OllamaClient
 
 
@@ -17,8 +18,8 @@ def get_llm_client() -> LLMClient:
     match settings.llm_provider:
         case "ollama":
             return OllamaClient()
-        # case "gigachat":
-        #     return GigaChatClient()
+        case "gigachat":
+            return GigaChatClient()
         case _:
             raise ValueError(
                 f"Неизвестный LLM_PROVIDER: {settings.llm_provider!r}. "

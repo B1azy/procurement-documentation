@@ -17,8 +17,8 @@ class Settings(BaseSettings):
     access_token_expire_minutes: int = 60 * 24
 
     # --- LLM ---
-    # Провайдеры для LLM. Например, "ollama"
-    llm_provider: str = "ollama"
+    # Провайдеры для LLM.
+    llm_provider: str = "gigachat"
 
     # Модель по умолчанию
     llm_model: str = "qwen2.5:7b"
@@ -33,6 +33,10 @@ class Settings(BaseSettings):
 
     # Базовый URL Ollama
     ollama_base_url: str = "http://localhost:11434"
+
+    gigachat_credentials: str | None = None
+    gigachat_model: str = "GigaChat-2-Max"
+    gigachat_verify_ssl_certs: bool = False  # В проде выставить True
 
 
 settings = Settings()
